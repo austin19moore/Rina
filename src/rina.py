@@ -19,7 +19,6 @@ class Rina:
         self.lastResponses = []
         self.client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
         self.lock = threading.Lock()
-        self.voice = TTS()
 
         self.Personality = []
         self.model = "gpt-3.5-turbo"
@@ -55,7 +54,9 @@ class Rina:
             self.micRec = []
 
         print("Rina: " + response)
-        self.voice.speak(response)
+        tts = TTS()
+        tts.start(response)
+        del(tts)
         return
 
 
@@ -68,7 +69,7 @@ class Rina:
         stereoThread = threading.Thread(target=sr.getTranscription, args=(False, lambda: stop, self,))
         micThread = threading.Thread(target=sr.getTranscription, args=(True, lambda: stop, self,))
         # stop
-        responseThread = threading.Thread(target=self.responseLoop, args=(lambda: stop, Rina,))
+        responseThread = threading.Thread(target=self.responseLoop, args=(lambda: stop,))
 
         # kill all threads on exit
         micThread.daemon = True
@@ -98,7 +99,7 @@ class Rina:
         return
 
 
-    def responseLoop(self, stop, Rina):
+    def responseLoop(self, stop):
         print("Starting responseLoop")
         try:
             while not stop():
@@ -109,7 +110,7 @@ class Rina:
                     time.sleep(random.choice([3, 4, 5]))
                 
                 # You are rate limited to 3 requests a minute on OPENAI free tier, ideally should be lowered dramatically (to like 1-5) to improve response time
-                time.sleep(Rina.responseTime)
+                time.sleep(self.responseTime)
 
         except:
             print("Failed to run responseLoop")
