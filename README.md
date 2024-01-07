@@ -7,3 +7,6 @@ Why the name?: Idk my friends named it
 
 Example output:
 ![image](https://github.com/austin19moore/Rina/assets/80301847/b62b0b5b-9dd2-48de-9877-fde5a675c624)
+
+here's the worst diagram ever for my initial concept that I used to built it:
+![image](https://github.com/austin19moore/Rina/assets/80301847/2ee59a6f-6e04-4aa0-8b02-6a36c64f7fb7)
