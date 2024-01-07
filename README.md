@@ -1,4 +1,6 @@
 Conversational chatbot the recieves microphone and desktop transcribed input as prompts and TTS's a response, output can be dramatically improved by using a fine-tuned openAI model (example included in data/finetuning/finetuning.txt).
+
+
 The driver creates the main thread, which then creates a response thread, a thread looping the microphone and a thread looping the desktop speech recognition. These transcriptions are put in buffers which are being checked by the response thread, when information is in the response thread it is sent to openAI for a response, and the response is appended to the response buffer to give the model context for the next response(s).
 
 To setup:
