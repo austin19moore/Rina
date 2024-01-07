@@ -6,7 +6,7 @@ Conversational chatbot the recieves microphone and desktop transcribed input as 
 - a thread looping the microphone</br>
 - a thread looping the desktop speech recognition.</br>
 </br>
-These transcriptions are put in buffers which are being checked by the response thread, when information is in the response thread it is sent to openAI for a response, and the response is appended to the response buffer to give the model context for the next response(s).
+These transcriptions are put in buffers which are being checked by the response thread, when information is detected in the response thread it is sent to openAI for a response, and the response is appended to the response buffer to give the model context for the next response(s).
 </br></br></br>
 
 To setup:
