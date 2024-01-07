@@ -1,3 +1,5 @@
+Conversational chatbot the recieves microphone and desktop transcribed input as prompts and TTS's a response
+
 To setup:
 Clone the repository, create a .env file in the root directory (same directory as the driver file), and add in your openai api key in .env as "OPENAI_API_KEY=you_api_key"
 
