@@ -1,4 +1,4 @@
-Conversational chatbot the recieves microphone and desktop transcribed input as prompts and TTS's a response, output can be dramatically improved by using a fine-tuned openAI model (example included in data/finetuning/finetuning.txt).
+Conversational chatbot the recieves microphone and desktop transcribed input as prompts and TTS's a response, output can be dramatically improved by using a fine-tuned OpenAI model (example included in data/finetuning/finetuning.txt).
 
 
 <h3><strong>The driver creates the main thread, which then creates:</strong></h3>
