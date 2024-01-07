@@ -1,8 +1,8 @@
 import threading
 from src.rina import Rina
 
-# also use desktop audio (only works on windows with Realtek stereo mix enabled), memory size (dramatically increases cost), model temperature (how creative it will be)
-rina = Rina(True, 2, 0.5)
+# also use desktop audio (only works on windows with Realtek stereo mix enabled), memory size (dramatically increases cost), response time (OpenAI free tier limited to 3 requests/minute), model temperature (how creative it will be)
+rina = Rina(True, 2, 17, 0.5)
 # name of custom model if fine tuned
 # rina.model = "ft:gpt-3.5-turbo:(your model id here)"
 personality = {
