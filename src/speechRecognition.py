@@ -58,13 +58,13 @@ class Speech:
                                 copy = True
 
                         if text != None and copy == False:
-                            print("Transcription: " + str(text))
                             if useMic == True:
                                 newMessage = {
                                     "role": "user",
                                     "content": "User said: [" + str(text) + "]"
                                 }
                                 with Rina.lock:
+                                    print("User Transcription: " + str(text))
                                     Rina.micRec.append(newMessage)
                             else:
                                 newMessage = {
@@ -72,6 +72,7 @@ class Speech:
                                     "content": "Others said: [" + str(text) + "]"
                                 }
                                 with Rina.lock:
+                                    print("Desktop Transcription: " + str(text))
                                     Rina.desktopRec.append(newMessage)
                 except:
                     print("failed to start speech recongition")
